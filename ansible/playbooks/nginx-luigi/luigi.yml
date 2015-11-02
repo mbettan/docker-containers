@@ -1,0 +1,22 @@
+- hosts: all
+
+  tasks:
+  - name: Ensure nginx is installed.
+    yum: pkg=nginx state=present update_cache=yes
+
+  - name: Ensure nginx is running.
+    service: name=nginx state=started
+
+  - name: Ensure luigi group is present.
+    group: name=luigi state=present
+
+  - name: Ensure luigi user is present.
+    user: name=luigi state=present group=luigi
+
+  - name: Ensure luigi.png is present.
+    copy: src=/etc/ansible/playbooks/nginx-luigi/luigi.png dest=/usr/share/nginx/html/luigi.png
+              owner=luigi group=luigi mode=664
+
+  - name: Ensure index.html template is installed.
+    template: src=/etc/ansible/playbooks/nginx-luigi/index.j2
+              dest=/usr/share/nginx/html/index.html

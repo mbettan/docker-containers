@@ -1,0 +1,23 @@
+- hosts: all
+  handlers:
+    - name: restart httpd
+      service: name=httpd state=restarted
+
+  tasks:
+    - name: 1. Apache Installation
+      yum: name=httpd state=present
+
+    - name: 2. PHP Installation
+      yum: name=php state=present
+
+    - name: 3. MySQL Installation
+      yum: name=mysql
+
+    - name: 4. Apache Start
+      service: name=httpd state=running enabled=yes
+
+    - name: 5. MySQL Start
+      service: name=mysqld state=running enabled=yes
+
+    - name: 6. Firewall disabled
+      service: name=iptables state=stopped

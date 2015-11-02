@@ -1,0 +1,22 @@
+- hosts: all
+
+  tasks:
+  - name: Ensure nginx is installed.
+    yum: pkg=nginx state=present update_cache=yes
+
+  - name: Ensure nginx is running.
+    service: name=nginx state=started
+
+  - name: Ensure mario group is present.
+    group: name=mario state=present
+
+  - name: Ensure mario user is present.
+    user: name=mario state=present group=mario
+
+  - name: Ensure mario.png is present.
+    copy: src=/etc/ansible/playbooks/nginx-mario/mario.png dest=/usr/share/nginx/html/mario.png
+              owner=mario group=mario mode=664
+
+  - name: Ensure index.html template is installed.
+    template: src=/etc/ansible/playbooks/nginx-mario/index.j2
+              dest=/usr/share/nginx/html/index.html
