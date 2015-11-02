@@ -1,5 +1,8 @@
 - hosts: all
 
+  vars:
+    baby: luigi
+
   tasks:
   - name: Ensure nginx is installed.
     yum: pkg=nginx state=present update_cache=yes
