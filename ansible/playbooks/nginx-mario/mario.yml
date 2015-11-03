@@ -15,6 +15,12 @@
   - name: Ensure mario user is present.
     user: name=mario state=present group=mario
 
+  - name: calm down selinux
+    selinux: state=disabled
+
+  - name: stop iptables to open port 80
+    action: service name=iptables state=stopped
+
   - name: Ensure mario.png is present.
     copy: src=/etc/ansible/playbooks/nginx-mario/mario.png dest=/usr/share/nginx/html/mario.png
               owner=mario group=mario mode=664
