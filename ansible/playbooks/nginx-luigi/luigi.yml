@@ -1,5 +1,8 @@
 - hosts: all
 
+  vars:
+    baby: luigi
+
   tasks:
   - name: Ensure nginx is installed.
     yum: pkg=nginx state=present update_cache=yes
@@ -12,6 +15,12 @@
 
   - name: Ensure luigi user is present.
     user: name=luigi state=present group=luigi
+
+  - name: calm down selinux
+    selinux: state=disabled
+
+  - name: stop iptables to open port 80
+    action: service name=iptables state=stopped
 
   - name: Ensure luigi.png is present.
     copy: src=/etc/ansible/playbooks/nginx-luigi/luigi.png dest=/usr/share/nginx/html/luigi.png
