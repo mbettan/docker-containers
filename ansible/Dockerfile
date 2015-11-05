@@ -13,7 +13,7 @@ RUN yum update -y && yum install -y ansible
 RUN ssh-keygen -t rsa -C "POC Factory" -N "" -f /root/.ssh/id_rsa
 
 RUN git clone https://github.com/mbettan/docker-containers.git /etc/ansible/playbooks
-RUN cd /etc/ansible/playbooks && git filter-branch --prune-empty --subdirectory-filter ansible/playbooks HEAD
+RUN cd /etc/ansible/playbooks && git stash && git filter-branch --prune-empty --subdirectory-filter ansible/playbooks HEAD
 
 RUN yum install -y python-pip gcc gcc-c++ python-devel krb5-workstation.x86_64
 RUN pip install --upgrade pip

@@ -1,3 +1,4 @@
 #! /bin/bash
-
-exec /etc/init.d/sshd start -D FOREGROUND
+/etc/init.d/sshd start
+sleep 5
+exec tail -f /var/log/secure
