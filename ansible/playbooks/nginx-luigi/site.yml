@@ -4,6 +4,9 @@
     baby: luigi
 
   tasks:
+  - name: Install libselinux-python
+    yum: name=libselinux-python
+
   - name: Ensure nginx is installed.
     yum: pkg=nginx state=present update_cache=yes
 
