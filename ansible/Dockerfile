@@ -4,8 +4,8 @@ MAINTAINER Michael Bettan mbe@hpe.com
 RUN yum update -y
 RUN yum install -y ntp openssh-server openssh-clients openssl-devel rsync nano git
 RUN echo "HP1nvent" | passwd root --stdin
-RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
-RUN echo "PermitRootLogin yes" >> /etc/ssh/ssh_config
+RUN echo "StrictHostKeyChecking no" >> /etc/ssh/sshd_config
+RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 RUN service sshd restart
 
 RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
