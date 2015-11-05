@@ -20,8 +20,5 @@ RUN pip install --upgrade pip
 RUN pip install https://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm
 RUN pip install --upgrade kerberos
 
-ADD start-app.sh /usr/local/sbin/start-app.sh
-RUN chmod +x /usr/local/sbin/start-app.sh
-
 EXPOSE 22
-CMD [ "/usr/local/sbin/start-app.sh", "-s default"]
+CMD ["/usr/sbin/sshd", "-D"]
