@@ -5,7 +5,7 @@
 
   tasks:
     - name: 1. Apache Installation
-      yum: name=httpd state=present
+      yum: name=httpd.x86_64 state=present
 
     - name: 2. PHP Installation
       yum: name=php state=present
