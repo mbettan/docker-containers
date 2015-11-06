@@ -1,9 +1,8 @@
 - hosts: '{{ target }}'
   tasks:
    - name: Disable RHEL repositories
-    command: mv /etc/yum.repos.d/*.repo /root/
+    command: rm -Rf /etc/yum.repos.d/*.repo /root/
     command: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
-    command: touch /etc/yum.repos.d/local.repo
   
    - name: Create local repository
     command: echo "[localrepo]" > /etc/yum.repos.d/local.repo
