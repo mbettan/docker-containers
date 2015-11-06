@@ -1,27 +1,28 @@
----
-- name: Disable RHEL repositories
-  command: mv /etc/yum.repos.d/*.repo /root/
-  command: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
-  command: touch /etc/yum.repos.d/local.repo
+- hosts: '{{ target }}'
+  tasks:
+   - name: Disable RHEL repositories
+    command: mv /etc/yum.repos.d/*.repo /root/
+    command: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
+    command: touch /etc/yum.repos.d/local.repo
   
-- name: Create local repository
-  command: echo "[localrepo]" > /etc/yum.repos.d/local.repo
-  command: echo "name=Local Rhel6 Repo" >> /etc/yum.repos.d/local.repo
-  command: echo "baseurl=http://rhel6repo/CentOS/6/6" >> /etc/yum.repos.d/local.repo
-  command: echo "enabled=1" >> /etc/yum.repos.d/local.repo
-  command: echo "gpgcheck=0" >> /etc/yum.repos.d/local.repo
+   - name: Create local repository
+    command: echo "[localrepo]" > /etc/yum.repos.d/local.repo
+    command: echo "name=Local Rhel6 Repo" >> /etc/yum.repos.d/local.repo
+    command: echo "baseurl=http://rhel6repo/CentOS/6/6" >> /etc/yum.repos.d/local.repo
+    command: echo "enabled=1" >> /etc/yum.repos.d/local.repo
+    command: echo "gpgcheck=0" >> /etc/yum.repos.d/local.repo
 
-- name: Create epl repository
-  command: echo "[epelrepo]" > /etc/yum.repos.d/epel.repo
-  command: echo "name=Local Rhel6 EPEL Repo" >> /etc/yum.repos.d/epel.repo
-  command: echo "baseurl=http://rhel6repo/CentOS/epel/6" >> /etc/yum.repos.d/epel.repo
-  command: echo "enabled=1" >> /etc/yum.repos.d/epel.repo
-  command: echo "gpgcheck=0" >> /etc/yum.repos.d/epel.repo
+   - name: Create epl repository
+    command: echo "[epelrepo]" > /etc/yum.repos.d/epel.repo
+    command: echo "name=Local Rhel6 EPEL Repo" >> /etc/yum.repos.d/epel.repo
+    command: echo "baseurl=http://rhel6repo/CentOS/epel/6" >> /etc/yum.repos.d/epel.repo
+    command: echo "enabled=1" >> /etc/yum.repos.d/epel.repo
+    command: echo "gpgcheck=0" >> /etc/yum.repos.d/epel.repo
 
-- name: Yum clean database
-  command: yum clean all
-  command: yum-config-manager --enable local.repo
-  command: yum-config-manager --enable epel.repo
+   - name: Yum clean database
+    command: yum clean all
+    command: yum-config-manager --enable local.repo
+    command: yum-config-manager --enable epel.repo
   
   
 
