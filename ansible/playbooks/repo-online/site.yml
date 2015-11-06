@@ -2,11 +2,11 @@
 
   tasks:
    - name: Disable RHEL repositories
-     command: rm -Rf /etc/yum.repos.d/*.repo /root/
-     command: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
+     shell: rm -Rf /etc/yum.repos.d/*
+     shell: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
 
    - name: Install EPEL
      yum: name=epel-release
 
    - name: Yum clean database 
-     command: yum clean all
+     shell: yum clean all

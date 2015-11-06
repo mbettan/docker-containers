@@ -1,27 +1,27 @@
 - hosts: '{{ target }}'
   tasks:
    - name: Disable RHEL repositories
-     command: rm -Rf /etc/yum.repos.d/*.repo /root/
-     command: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
+     shell: rm -Rf /etc/yum.repos.d/*
+     shell: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
   
    - name: Create local repository
-     command: echo "[localrepo]" > /etc/yum.repos.d/local.repo
-     command: echo "name=Local Rhel6 Repo" >> /etc/yum.repos.d/local.repo
-     command: echo "baseurl=http://rhel6repo/CentOS/6/6" >> /etc/yum.repos.d/local.repo
-     command: echo "enabled=1" >> /etc/yum.repos.d/local.repo
-     command: echo "gpgcheck=0" >> /etc/yum.repos.d/local.repo
+     shell: echo "[localrepo]" > /etc/yum.repos.d/local.repo
+     shell: echo "name=Local Rhel6 Repo" >> /etc/yum.repos.d/local.repo
+     shell: echo "baseurl=http://rhel6repo/CentOS/6/6" >> /etc/yum.repos.d/local.repo
+     shell: echo "enabled=1" >> /etc/yum.repos.d/local.repo
+     shell: echo "gpgcheck=0" >> /etc/yum.repos.d/local.repo
 
    - name: Create epl repository
-     command: echo "[epelrepo]" > /etc/yum.repos.d/epel.repo
-     command: echo "name=Local Rhel6 EPEL Repo" >> /etc/yum.repos.d/epel.repo
-     command: echo "baseurl=http://rhel6repo/CentOS/epel/6" >> /etc/yum.repos.d/epel.repo
-     command: echo "enabled=1" >> /etc/yum.repos.d/epel.repo
-     command: echo "gpgcheck=0" >> /etc/yum.repos.d/epel.repo
+     shell: echo "[epelrepo]" > /etc/yum.repos.d/epel.repo
+     shell: echo "name=Local Rhel6 EPEL Repo" >> /etc/yum.repos.d/epel.repo
+     shell: echo "baseurl=http://rhel6repo/CentOS/epel/6" >> /etc/yum.repos.d/epel.repo
+     shell: echo "enabled=1" >> /etc/yum.repos.d/epel.repo
+     shell: echo "gpgcheck=0" >> /etc/yum.repos.d/epel.repo
 
    - name: Yum clean database
-     command: yum clean all
-     command: yum-config-manager --enable local.repo
-     command: yum-config-manager --enable epel.repo
+     shell: yum clean all
+     shell: yum-config-manager --enable local.repo
+     shell: yum-config-manager --enable epel.repo
   
   
 
