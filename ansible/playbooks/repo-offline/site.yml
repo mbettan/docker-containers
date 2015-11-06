@@ -1,4 +1,5 @@
 - hosts: '{{ target }}'
+
   tasks:
    - name: Solve broken yum update
      shell: yum erase -y qpid-cpp-client

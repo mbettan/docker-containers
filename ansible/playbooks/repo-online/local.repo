@@ -1,0 +1,5 @@
+[localrepo]
+name=Local Extra Packages for Enterprise Linux 6 - $basearch
+baseurl=http://mirror.cisp.com/CentOS/6/os/$basearch
+enabled=1
+gpgcheck=0

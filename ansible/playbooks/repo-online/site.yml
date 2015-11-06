@@ -10,11 +10,17 @@
    - name: Disable RHEL repositories
      shell: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
 
-  - name: Create CentOS Repository Online
-    copy: src=/etc/ansible/playbooks/repo-online/epel.repo dest=/etc/yum.repos.d/epel.repo
+   - name: Create local repository
+     copy: src=/etc/ansible/playbooks/repo-online/local.repo dest=/etc/yum.repos.d/local.repo
+
+   - name: Create epel repository
+     copy: src=/etc/ansible/playbooks/repo-online/epel.repo dest=/etc/yum.repos.d/epel.repo
 
    - name: Yum clean database
      shell: yum clean all
+
+   - name: Yum Enable local repository
+     shell: yum-config-manager --enable local.repo
 
    - name: Yum Enable epel repository
      shell: yum-config-manager --enable epel.repo
