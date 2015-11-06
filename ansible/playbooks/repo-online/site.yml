@@ -5,6 +5,13 @@
      shell: rm -Rf /etc/yum.repos.d/*
      shell: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
 
+   - name: Create remote repository
+     shell: echo "[localrepo]" > /etc/yum.repos.d/local.repo
+     shell: echo "name=Local Rhel6 Repo" >> /etc/yum.repos.d/local.repo
+     shell: echo "baseurl=http://mirror.cisp.com/CentOS/6/os/i386/" >> /etc/yum.repos.d/local.repo
+     shell: echo "enabled=1" >> /etc/yum.repos.d/local.repo
+     shell: echo "gpgcheck=0" >> /etc/yum.repos.d/local.repo
+ 
    - name: Install EPEL
      yum: name=epel-release
 
