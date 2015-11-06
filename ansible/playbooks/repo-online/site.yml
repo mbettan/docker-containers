@@ -1,19 +1,20 @@
 - hosts: '{{ target }}'
 
   tasks:
-   - name: Disable RHEL repositories
+   - name: Solve broken yum update
+     shell: yum erase -y qpid-cpp-client
+
+   - name: Remove RHEL repositories
      shell: rm -Rf /etc/yum.repos.d/*
+
+   - name: Disable RHEL repositories
      shell: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
 
-   - name: Create remote repository
-     shell: echo "[localrepo]" > /etc/yum.repos.d/local.repo
-     shell: echo "name=Local Rhel6 Repo" >> /etc/yum.repos.d/local.repo
-     shell: echo "baseurl=http://mirror.cisp.com/CentOS/6/os/i386/" >> /etc/yum.repos.d/local.repo
-     shell: echo "enabled=1" >> /etc/yum.repos.d/local.repo
-     shell: echo "gpgcheck=0" >> /etc/yum.repos.d/local.repo
- 
-   - name: Install EPEL
-     yum: name=epel-release
+  - name: Create CentOS Repository Online
+    copy: src=/etc/ansible/playbooks/repo-online/epel.repo dest=/etc/yum.repos.d/epel.repo
 
-   - name: Yum clean database 
+   - name: Yum clean database
      shell: yum clean all
+
+   - name: Yum Enable epel repository
+     shell: yum-config-manager --enable epel.repo

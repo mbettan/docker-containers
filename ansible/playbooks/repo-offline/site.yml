@@ -1,29 +1,28 @@
 - hosts: '{{ target }}'
   tasks:
-   - name: Disable RHEL repositories
-     shell: rm -Rf /etc/yum.repos.d/*
-     shell: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
-  
-   - name: Create local repository
-     shell: echo "[localrepo]" > /etc/yum.repos.d/local.repo
-     shell: echo "name=Local Rhel6 Repo" >> /etc/yum.repos.d/local.repo
-     shell: echo "baseurl=http://rhel6repo/CentOS/6/6" >> /etc/yum.repos.d/local.repo
-     shell: echo "enabled=1" >> /etc/yum.repos.d/local.repo
-     shell: echo "gpgcheck=0" >> /etc/yum.repos.d/local.repo
+   - name: Solve broken yum update
+     shell: yum erase -y qpid-cpp-client
 
-   - name: Create epl repository
-     shell: echo "[epelrepo]" > /etc/yum.repos.d/epel.repo
-     shell: echo "name=Local Rhel6 EPEL Repo" >> /etc/yum.repos.d/epel.repo
-     shell: echo "baseurl=http://rhel6repo/CentOS/epel/6" >> /etc/yum.repos.d/epel.repo
-     shell: echo "enabled=1" >> /etc/yum.repos.d/epel.repo
-     shell: echo "gpgcheck=0" >> /etc/yum.repos.d/epel.repo
+   - name: Remove RHEL repositories
+     shell: rm -Rf /etc/yum.repos.d/*
+
+   - name: Disable RHEL repositories
+     shell: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
+
+   - name: Create local repository
+     copy: src=/etc/ansible/playbooks/repo-offline/local.repo dest=/etc/yum.repos.d/local.repo
+
+   - name: Create epel repository
+     copy: src=/etc/ansible/playbooks/repo-offline/epel.repo dest=/etc/yum.repos.d/epel.repo
 
    - name: Yum clean database
      shell: yum clean all
+
+   - name: Yum Enable local repository
      shell: yum-config-manager --enable local.repo
+
+   - name: Yum Enable epel repository
      shell: yum-config-manager --enable epel.repo
-  
-  
 
 
 
