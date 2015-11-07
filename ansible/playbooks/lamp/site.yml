@@ -11,7 +11,7 @@
       yum: name=php state=present
 
     - name: 3. MySQL Installation
-      yum: name=mysql
+      yum: name=mysql-server
 
     - name: 4. Apache Start
       service: name=httpd state=running enabled=yes
