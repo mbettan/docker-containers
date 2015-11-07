@@ -11,6 +11,12 @@
      shell: yum-config-manager --disable redhat.repo rhel-source.repo centos.repo
 
    - name: Create local repository
+     copy: src=/etc/ansible/playbooks/repo-offline/local.repo dest=/etc/yum.repos.d/local.repo
+
+   - name: Create epel repository
+     copy: src=/etc/ansible/playbooks/repo-offline/epel.repo dest=/etc/yum.repos.d/epel.repo
+
+   - name: Create local repository
      shell: echo "baseurl={{ baseurllocal }}" >> /etc/yum.repos.d/local.repo
 
    - name: Create epel repository
@@ -24,7 +30,6 @@
 
    - name: Yum Enable epel repository
      shell: yum-config-manager --enable epel.repo
-
 
 
 
