@@ -1,5 +1,4 @@
 [epel]
 name=Extra Packages for Enterprise Linux 6 - $basearch
-baseurl=http://rhel6repo/CentOS/epel/6
 enabled=1
 gpgcheck=0

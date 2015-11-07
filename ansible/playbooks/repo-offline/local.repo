@@ -1,5 +1,4 @@
 [localrepo]
 name=Local Rhel6 Repo
-baseurl=http://rhel6repo/CentOS/6/7
 enabled=1
 gpgcheck=0
