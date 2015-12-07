@@ -1,0 +1,45 @@
+class mysqlrpm {
+package {
+  "mysql-libs":
+        provider => rpm,
+        install_options => ['-ivh --nodeps'],
+	source => "/etc/puppet/modules/mysqlrpm/files/mysql-libs-5.1.73-3.el6_5.i686.rpm"
+	}
+
+package {
+  "mysql-server":
+        provider => rpm,
+        install_options => ['-ivh --nodeps'],
+        source => "/etc/puppet/modules/mysqlrpm/files/mysql-server-5.1.73-3.el6_5.x86_64.rpm"
+        }
+
+package {
+  "mysql":
+        provider => rpm,
+        install_options => ['-ivh --nodeps'],
+        source => "/etc/puppet/modules/mysqlrpm/files/mysql-5.1.73-3.el6_5.x86_64.rpm"
+        }
+
+package {
+  "Perl-DB":
+        provider => rpm,
+        install_options => ['-ivh --nodeps'],
+        source => "/etc/puppet/modules/mysqlrpm/files/perl-DBD-MySQL-4.023-5.el7.x86_64.rpm"
+        }
+
+# ensure mysql service is running
+service { 'mysqld':  ensure => running,}
+
+$password = "admin@123"
+#$mysql = [ "mysql", "mysql-server" ]
+
+#  package { $mysql : ensure => installed, }
+
+  exec { "Set MySQL server root password" :
+#    subscribe => [ Package[ $mysql ] ],
+    refreshonly => true,
+    unless => "mysqladmin -uroot -p$password status",
+    path => "/bin:/usr/bin",
+    command => "mysqladmin -uroot password $password",
+}
+}

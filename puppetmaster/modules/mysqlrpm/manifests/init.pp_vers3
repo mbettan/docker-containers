@@ -1,0 +1,28 @@
+class mysqlrpm {
+
+include mysqlrpm::copy, mysqlrpm::tar, mysqlrpm::rpm 
+}
+
+class { 'mysqlrpm::copy': 
+   before => 'Tar complete',
+}
+
+
+class { 'mysqlrpm::tar': 
+    before => 'mysqlrpm::rpm',
+    require => Notify['Copy Complete']
+} 
+
+class { 'mysqlrpm::rpm': 
+   require => Notify['Tar Complete']
+}
+
+notify { 'Copy Complete':
+        require => Class['mysqlrpm::copy']
+    }
+
+ notify { 'Tar Complete':
+        require => Class['mysqlrpm::copy']
+    }
+
+#Class["mysqlrpm::copy"] -> Class["mysqlrpm::rpm"]

@@ -1,0 +1,45 @@
+class mysqlrpm {
+
+file { "/root/mysql":
+    ensure => directory,
+}
+
+file { "/root/mysql/mysql-5.1.73-3.el6_5.x86_64.rpm":
+    ensure => directory,
+    mode   => 440,
+    owner  => root,
+    group  => root,
+    source => 'puppet:///modules/mysqlrpm/mysql-5.1.73-3.el6_5.x86_64.rpm',
+        }
+
+file { "/root/mysql/mysql-libs-5.1.73-3.el6_5.i686.rpm":
+    ensure => directory,
+    mode   => 440,
+    owner  => root,
+    group  => root,
+    source => 'puppet:///modules/mysqlrpm/mysql-libs-5.1.73-3.el6_5.i686.rpm',
+        }
+
+file { "/root/mysql/mysql-server-5.1.73-3.el6_5.x86_64.rpm":
+    ensure => directory,
+    mode   => 440,
+    owner  => root,
+    group  => root,
+    source => 'puppet:///modules/mysqlrpm/mysql-server-5.1.73-3.el6_5.x86_64.rpm',
+        }
+file { "/root/mysql/perl-DBD-MySQL-4.023-5.el7.x86_64.rpm":
+    ensure => directory,
+    mode   => 440,
+    owner  => root,
+    group  => root,
+    source => 'puppet:///modules/mysqlrpm/perl-DBD-MySQL-4.023-5.el7.x86_64.rpm',
+        }
+
+file { "/root/mysql/mysqlrpms.tar.gz":
+    ensure => directory,
+    mode   => 440,
+    owner  => root,
+    group  => root,
+    source => 'puppet:///modules/mysqlrpm/mysqlrpms.tar.gz',
+        }
+}

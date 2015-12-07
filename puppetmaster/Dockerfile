@@ -1,4 +1,4 @@
-FROM centos:6
+FROM centos:6.6
 MAINTAINER Syphax GUEMGHAR sguemghar@itsoverlap.com
 RUN yum install -y ntp openssh-server openssh-clients httpd httpd-devel mod_ssl ruby-devel rubygems gcc gcc-c++ curl-devel openssl-devel zlib-devel createrepo rsync
 RUN echo "HP1nvent" | passwd root --stdin
