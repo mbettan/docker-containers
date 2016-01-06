@@ -23,7 +23,7 @@ RUN git clone --no-checkout --no-hardlinks https://github.com/CloudSlang/cloud-s
   && rm -rf cloud-slang-content \
   && git reset --hard HEAD
   
-WORKDIR /  
+ 
 RUN git clone https://github.com/FlorianJDF/cslang-heroku.git
 RUN cp -r /cslang-heroku/content/io/cloudslang/paas/* /usr/cslang/cslang/content/io/cloudslang/paas/
 RUN mkdir /usescases
