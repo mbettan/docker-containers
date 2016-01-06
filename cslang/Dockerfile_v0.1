@@ -1,0 +1,47 @@
+FROM ubuntu:14.04
+
+MAINTAINER CloudSlang
+
+RUN apt-get update -y && apt-get install -y python python-pip vim emacs openssh-server git tree
+
+RUN apt-get update -y && apt-get install -y x11-apps openjdk-7-jre xterm
+
+RUN groupadd -r cslang && useradd -r -g cslang cslang
+
+
+
+RUN mkdir -p /usr/cslang \
+  && cd /usr/cslang \
+  && wget "https://github.com/CloudSlang/cloud-slang/releases/download/cloudslang-0.9.1/cslang-cli-with-content.tar.gzip" \
+  && tar xvf cslang-cli-with-content.tar.gzip \
+  && rm cslang-cli-with-content.tar.gzip
+
+WORKDIR /usr/cslang/cslang/
+
+RUN git clone --no-checkout --no-hardlinks https://github.com/CloudSlang/cloud-slang-content.git \
+  && mv cloud-slang-content/.git . \
+  && rm -rf cloud-slang-content \
+  && git reset --hard HEAD
+  
+WORKDIR /  
+RUN git clone https://github.com/FlorianJDF/cslang-heroku.git
+RUN cp -r /cslang-heroku/content/io/cloudslang/paas/* /usr/cslang/cslang/content/io/cloudslang/paas/
+RUN mkdir /usescases
+RUN cp -r /cslang-heroku/test/io/cloudslang/paas/* /usescases/
+
+RUN cd /usr/cslang/cslang/python-lib && pip install -r requirements.txt -t . 
+
+ADD ./start-cslang.sh /usr/local/sbin/start-cslang.sh
+
+RUN chmod +x /usr/local/sbin/start-cslang.sh
+
+RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
+  && sed -i 's/without-password/yes/g' /etc/ssh/sshd_config \
+  && echo "root:cslang" | chpasswd \
+  && service ssh restart
+
+EXPOSE 22
+
+WORKDIR /usr/cslang/cslang/bin/
+
+CMD [ "/usr/local/sbin/start-cslang.sh", "-s default"]
