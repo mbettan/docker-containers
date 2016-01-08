@@ -11,6 +11,8 @@ RUN touch /etc/apt/sources.list.d/atomrepo.list \
 
 RUN apt-get update -y && apt-get install -y --force-yes x11-apps atom
 
+RUN apm install language-cloudslang
+
 RUN groupadd -r cslang && useradd -r -g cslang cslang
 
 RUN mkdir -p /usr/cslang \
