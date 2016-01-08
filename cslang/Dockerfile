@@ -46,6 +46,8 @@ RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
   && echo "root:cslang" | chpasswd \
   && service ssh restart
 
+RUN ln -s /usr/cslang/cslang/bin/cslang /usr/sbin/cslang
+  
 EXPOSE 22
 
 CMD [ "/usr/local/sbin/start-cslang.sh", "-s default"]
