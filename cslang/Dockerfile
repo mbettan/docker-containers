@@ -21,14 +21,16 @@ RUN mkdir -p /usr/cslang \
   && tar xvf cslang-cli-with-content.tar.gzip \
   && rm cslang-cli-with-content.tar.gzip
 
-WORKDIR /usr/cslang/cslang/
 
-RUN git clone --no-checkout --no-hardlinks https://github.com/CloudSlang/cloud-slang-content.git \
-  && mv cloud-slang-content/.git . \
-  && rm -rf cloud-slang-content \
-  && git reset --hard HEAD
-  
-WORKDIR /  
+
+RUN mkdir /tmpgit  
+WORKDIR /tmpgit
+RUN git clone https://github.com/CloudSlang/cloud-slang-content.git
+RUN rsync -a -v /tmpgit/cloud-slang-content/* /usr/cslang/cslang/
+
+
+WORKDIR /
+RUN rm -rf /tmpgit  
 RUN git clone https://github.com/FlorianJDF/cslang-heroku.git
 RUN cp -r /cslang-heroku/content/io/cloudslang/paas/* /usr/cslang/cslang/content/io/cloudslang/paas/
 RUN mkdir /usescases
