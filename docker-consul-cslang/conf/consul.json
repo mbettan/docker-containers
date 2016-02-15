@@ -1,0 +1,7 @@
+{
+	"watches": [{
+		"type": "checks",
+		"state": "warning",
+		"handler": "/consul.d/conf.d/clearDiskSpace.sh"
+	}]
+}

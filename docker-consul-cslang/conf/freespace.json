@@ -1,0 +1,8 @@
+{
+	"check":
+	{
+		"name": "freespace",
+		"script": "/consul.d/conf.d/disk_usage.sh",
+		"interval": "60s"
+}
+}
