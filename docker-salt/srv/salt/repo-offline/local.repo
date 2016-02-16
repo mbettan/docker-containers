@@ -1,0 +1,4 @@
+[localrepo]
+name=Local Rhel6 Repo
+enabled=1
+gpgcheck=0
