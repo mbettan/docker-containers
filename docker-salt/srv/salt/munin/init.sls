@@ -1,2 +1,0 @@
-munin-node:
-  pkg.installed

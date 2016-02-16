@@ -1,4 +1,0 @@
-include:
-  - .server
-  - .plugins
-  - .nrpe

@@ -1,4 +1,0 @@
-[epel]
-name=Extra Packages for Enterprise Linux 6 - $basearch
-enabled=1
-gpgcheck=0
