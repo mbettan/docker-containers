@@ -1,0 +1,1 @@
+docker run -rm=true -p 49080:8080 -i -t salt /bin/bash

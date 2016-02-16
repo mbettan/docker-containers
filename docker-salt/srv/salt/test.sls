@@ -1,0 +1,3 @@
+vim-core:
+ pkg:
+  - installed
