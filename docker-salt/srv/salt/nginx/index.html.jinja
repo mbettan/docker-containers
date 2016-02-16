@@ -1,0 +1,15 @@
+{% set host = salt['grains.get']('host') -%}
+<html>
+<body>
+<h1> SALTED !!! <h2>
+<h1>Welcome to nginx!</h1>
+<p>Hello!  This is being served from:</p>
+
+ <script type="text/javascript">
+            var port = window.location.port;
+            var url = window.location.host;
+            document.write(url + ":" + port)
+ </script>
+
+</body>
+</html>
