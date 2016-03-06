@@ -1,5 +1,5 @@
 FROM centos:6.6
-MAINTAINER kaled Belgith  kaled.belgith@hpe.com
+MAINTAINER POC Factory
 
 RUN yum install -y wget tar pciutils system-logos which libxml2 dmidecode net-tools virt-what apr apr-util curl mailcap libjpeg openssh-server libtool-ltdl unixODBC libxslt zlib
 RUN echo "admin@123" | passwd root --stdin
