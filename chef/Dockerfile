@@ -12,6 +12,12 @@ ADD ./knife.rb /.chef/knife.rb
 ADD ./start-chef.sh /usr/local/sbin/start-chef.sh
 ADD ./run_chef_server /usr/local/bin/
 
+# Install SSH Server
+# ---------------------
+RUN apt-get install -y openssh-server
+RUN mkdir -p /var/run/sshd
+RUN echo 'root:root' |chpasswd
+
 RUN chmod +x /usr/local/bin/run_chef_server
 RUN chmod +x /usr/local/sbin/start-chef.sh
 
