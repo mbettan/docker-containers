@@ -10,6 +10,10 @@ RUN tar -xvf puppet-enterprise-2015.3.2-el-6-x86_64.tar.gz
 ADD ./pe_start.sh /usr/local/sbin/pe_start.sh
 ADD ./pe.poc.answers.txt puppet-enterprise-2015.3.2-el-6-x86_64/answers/pe.poc.answers.txt
 
+ADD ./myapacheluigi puppet-enterprise-2015.3.2-el-6-x86_64/answers/myapacheluigi  
+ADD ./myapachemario puppet-enterprise-2015.3.2-el-6-x86_64/answers/myapachemario
+ADD ./mysqlserver puppet-enterprise-2015.3.2-el-6-x86_64/answers/mysqlserver
+
 RUN sed -i "s/172.16.1.178/172.16.1.147/g" puppet-enterprise-2015.3.2-el-6-x86_64/answers/pe.poc.answers.txt
 
 EXPOSE 8140 61613 443 4433 80 22
