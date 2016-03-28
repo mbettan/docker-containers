@@ -5,6 +5,7 @@ container_ip=$(cat /etc/hosts | awk '{print $1}' | head  -1) \
 /etc/init.d/sshd start
 /puppet-enterprise-2015.3.2-el-6-x86_64/puppet-enterprise-installer -a /puppet-enterprise-2015.3.2-el-6-x86_64/answers/pe.poc.answers.txt
 
+puppet module install puppetlabs-java
 puppet module install puppetlabs-apache
 puppet module install puppetlabs-mysql
 
