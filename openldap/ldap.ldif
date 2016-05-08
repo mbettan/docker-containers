@@ -1,0 +1,658 @@
+
+dn: uid=admin,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: CSA Admin User
+sn: admin
+uid: admin
+givenname: CSA Admin
+mail: admin@csa.org
+manager: uid=manager,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+member: cn=CSAAdministrator,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: e1NIQX1BQTU1UGJjTVdUQ2ZwdkR6YlFCRzBSRHp2anc9
+
+dn: uid=andy,ou=ApplicationArchitect,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Application Architect
+sn: Application Architect
+uid: andy
+givenname: Andy
+mail: andy@csp.org
+member: cn=ApplicationArchitect,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=
+ com
+ou: Users
+userpassword:: e1NIQX1BQTU1UGJjTVdUQ2ZwdkR6YlFCRzBSRHp2anc9
+
+dn: uid=consumer,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Consumer A User
+sn: consumerA
+uid: consumer
+givenname: consumer
+mail: consumer@csp.org
+manager: uid=manager,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+member: cn=ServiceConsumer,ou=ConsumerGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=consumergui,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Consumer GUI User
+sn: consumergui
+uid: consumergui
+givenname: consumergui
+mail: consumergui@con.example.com
+member: cn=ServiceConsumer,ou=ConsumerGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=consvcadmin,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: CSA Consumer Service Manager User
+sn: consvcadmin
+uid: consvcadmin
+givenname: CSA Consumer Service Manger
+mail: consvcadmin@example.com
+manager: uid=manager,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+member: cn=ConsumerServiceAdministrator,ou=ProviderGroup,ou=CSAGroups,dc=exa
+ mple,dc=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=csaadmin,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: CSA Admin User
+sn: csaadmin
+uid: csaadmin
+givenname: CSA Admin
+mail: csaadmin@example.com
+manager: uid=manager,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+member: cn=CSAAdministrator,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=csladmin,ou=EngineeringUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Engineering User
+sn: engineering consumer
+uid: csladmin
+givenname: csladmin
+mail: csladmin@csp.org
+member: cn=ServiceConsumer,ou=EngineeringGroup,ou=CSAGroups,dc=example,dc=co
+ m
+ou: EngineeringGroup,ou=CSAGroups
+userpassword:: e1NIQX1lU28rbUQyRGNmUFpBeFRCZDhmeU0wc0UzWkk9
+
+dn: uid=david,ou=ApplicationDeveloper,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Application Developer
+sn: Application Developer
+uid: david
+givenname: David
+mail: david@csp.org
+member: cn=ApplicationDeveloper,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=
+ com
+ou: Users
+userpassword:: e1NIQX1BQTU1UGJjTVdUQ2ZwdkR6YlFCRzBSRHp2anc9
+
+dn: uid=engg_mgr,ou=EngineeringUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Engineering User
+sn: engineering consumer
+uid: engg_mgr
+givenname: engg_mgr
+mail: engg_mgr@csp.org
+member: cn=ServiceConsumer,ou=EngineeringGroup,ou=CSAGroups,dc=example,dc=co
+ m
+ou: EngineeringGroup,ou=CSAGroups
+userpassword:: c2VjcmV0
+
+dn: uid=engg_user1,ou=EngineeringUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Engineering User
+sn: engineering consumer
+uid: engg_user1
+givenname: engg_user1
+mail: engg_user1@csp.org
+member: cn=ServiceConsumer,ou=EngineeringGroup,ou=CSAGroups,dc=example,dc=co
+ m
+ou: EngineeringGroup,ou=CSAGroups
+userpassword:: c2VjcmV0
+
+dn: uid=engg_user2,ou=EngineeringUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Engineering User
+sn: engineering consumer
+uid: engg_user2
+givenname: engg_user2
+mail: engg_user2@csp.org
+member: cn=ServiceConsumer,ou=EngineeringGroup,ou=CSAGroups,dc=example,dc=co
+ m
+ou: EngineeringGroup,ou=CSAGroups
+userpassword:: c2VjcmV0
+
+dn: uid=manager,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Consumer Manager User
+sn: consumerManager
+uid: manager
+givenname: manager
+mail: manager@con.example.com
+member: cn=ServiceConsumer,ou=ConsumerGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=manager,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: CSA Manager User
+sn: manager
+uid: manager
+givenname: CSA Manager
+mail: manager@example.com
+member: cn=ManagerGroup,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=mkt_mgr,ou=MarketingUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Marketing User
+sn: marketing consumer
+uid: mkt_mgr
+givenname: mkt_mgr
+mail: mkt_mgr@csp.org
+member: cn=ServiceConsumer,ou=MarketingGroup,ou=CSAGroups,dc=example,dc=com
+ou: MarketingGroup,ou=CSAGroups
+userpassword:: c2VjcmV0
+
+dn: uid=mkt_user1,ou=MarketingUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Marketing User
+sn: marketing consumer
+uid: mkt_user1
+givenname: mkt_user1
+mail: mkt_user1@csp.org
+member: cn=ServiceConsumer,ou=MarketingGroup,ou=CSAGroups,dc=example,dc=com
+ou: MarketingGroup,ou=CSAGroups
+userpassword:: c2VjcmV0
+
+dn: uid=mkt_user2,ou=MarketingUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Marketing User
+sn: marketing consumer
+uid: mkt_user2
+givenname: mkt_user2
+mail: mkt_user2@csp.org
+member: cn=ServiceConsumer,ou=MarketingGroup,ou=CSAGroups,dc=example,dc=com
+ou: MarketingGroup,ou=CSAGroups
+userpassword:: c2VjcmV0
+
+dn: uid=nancy,ou=ApplicationQA,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Application Developer
+sn: Application Developer
+uid: nancy
+givenname: Nancy
+mail: nancy@csp.org
+member: cn=ApplicationQA,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: e1NIQX1BQTU1UGJjTVdUQ2ZwdkR6YlFCRzBSRHp2anc9
+
+dn: uid=nocongroup,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: No Consumer Group User
+sn: nocongroup
+uid: nocongroup
+givenname: nocongroup
+mail: nocongroup@con.example.com
+member: cn=NoConGroup,ou=ConsumerGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=nocsagroup,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: No CSA Group User
+sn: nocsagroup
+uid: nocsagroup
+givenname: No CSA Group
+mail: nocsagroup@example.com
+manager: uid=manager,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+member: cn=NoCSAGroup,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=nogroup,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: No Group User
+sn: nogroup
+uid: nogroup
+givenname: nogroup
+mail: nogroup@con.example.com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=nogroup,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: No Group User
+sn: nogroup
+uid: nogroup
+givenname: No Group
+mail: nogroup@example.com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=ressupplymgr,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: CSA Resource Supply Admin User
+sn: ressupplymgr
+uid: ressupplymgr
+givenname: CSA Resource Supply Admin
+mail: ressupplymgr@example.com
+manager: uid=manager,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+member: cn=ResourceSupplyManager,ou=ProviderGroup,ou=CSAGroups,dc=example,dc
+ =com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=robert,ou=ApplicationReleaseManager,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Application Release Manager
+sn: Application Release Manager
+uid: robert
+givenname: Robert
+mail: robert@csp.org
+member: cn=ApplicationReleaseManager,ou=ProviderGroup,ou=CSAGroups,dc=exampl
+ e,dc=com
+ou: Users
+userpassword:: e1NIQX1BQTU1UGJjTVdUQ2ZwdkR6YlFCRzBSRHp2anc9
+
+dn: uid=sales_mgr,ou=SalesUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Sales User
+sn: Sales consumer
+uid: sales_mgr
+givenname: sales_mgr
+mail: sales_mgr@csp.org
+member: cn=ServiceConsumer,ou=SalesGroup,ou=CSAGroups,dc=example,dc=com
+ou: SalesGroup,ou=CSAGroups
+userpassword:: c2VjcmV0
+
+dn: uid=sales_user1,ou=SalesUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Sales User
+sn: Sales consumer
+uid: sales_user1
+givenname: sales_user1
+mail: sales_user1@csp.org
+member: cn=ServiceConsumer,ou=SalesGroup,ou=CSAGroups,dc=example,dc=com
+ou: SalesGroup,ou=CSAGroups
+userpassword:: c2VjcmV0
+
+dn: uid=sales_user2,ou=SalesUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: Sales User
+sn: Sales consumer
+uid: sales_user2
+givenname: sales_user2
+mail: sales_user2@csp.org
+member: cn=ServiceConsumer,ou=SalesGroup,ou=CSAGroups,dc=example,dc=com
+ou: SalesGroup,ou=CSAGroups
+userpassword:: c2VjcmV0
+
+dn: uid=svcbismgr,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: CSA Service Business Manager User
+sn: svcbismgr
+uid: svcbismgr
+givenname: CSA Service Business Manager
+mail: svcbismgr@example.com
+manager: uid=manager,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+member: cn=ServiceBusinessManager,ou=ProviderGroup,ou=CSAGroups,dc=example,d
+ c=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: uid=svcdesigner,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: uidObject
+objectClass: extensibleObject
+objectClass: person
+objectClass: organizationalPerson
+cn: CSA Service Designer User
+sn: svcdesginer
+uid: svcdesigner
+givenname: CSA Service Designer
+mail: svcdesigner@example.com
+manager: uid=manager,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+member: cn=ServiceDesigner,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+ou: Users
+userpassword:: c2VjcmV0
+
+dn: ou=Admin,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: Admin
+
+dn: ou=ApplicationArchitect,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: ApplicationArchitect
+
+dn: ou=ApplicationDeveloper,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: ApplicationDeveloper
+
+dn: ou=ApplicationQA,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: ApplicationQA
+
+dn: ou=ApplicationReleaseManager,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: ApplicationReleaseManager
+
+dn: ou=ConsumerGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: ConsumerGroup
+
+dn: ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: ConsumerUsers
+
+dn: ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: CSAGroups
+
+dn: ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: CSAUsers
+
+dn: ou=EngineeringGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: EngineeringGroup
+
+dn: ou=EngineeringUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: EngineeringUsers
+
+dn: ou=MarketingGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: MarketingGroup
+
+dn: ou=MarketingUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: MarketingUsers
+
+dn: ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: ProviderGroup
+
+dn: ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: ProviderUsers
+
+dn: ou=SalesGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: SalesGroup
+
+dn: ou=SalesUsers,ou=CSAUsers,dc=example,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: SalesUsers
+
+dn: cn=ApplicationArchitect,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ApplicationArchitect
+uniquemember: uid=svcdesigner,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ApplicationDeveloper,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ApplicationDeveloper
+uniquemember: uid=svcdesigner,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ApplicationQA,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ApplicationQA
+uniquemember: uid=svcdesigner,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ApplicationReleaseManager,ou=ProviderGroup,ou=CSAGroups,dc=example,dc
+ =com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ApplicationReleaseManager
+uniquemember: uid=svcdesigner,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ConsumerServiceAdministrator,ou=ProviderGroup,ou=CSAGroups,dc=example
+ ,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ConsumerServiceAdministrator
+uniquemember: uid=consvcadmin,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=CSAAdministrator,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: CSAAdministrator
+uniquemember: uid=csaadmin,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ManagerGroup,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ManagerGroup
+uniquemember: uid=manager,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=NoConGroup,ou=ConsumerGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: NoConGroup
+uniquemember: uid=nocongroup,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=NoCSAGroup,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: NoCSAGroup
+uniquemember: uid=nocsagroup,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ResourceSupplyManager,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ResourceSupplyManager
+uniquemember: uid=ressupplymgr,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=co
+ m
+
+dn: cn=ServiceBusinessManager,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=co
+ m
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ServiceBusinessManager
+uniquemember: uid=svcbismgr,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ServiceConsumer,ou=ConsumerGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ServiceConsumer
+uniquemember: uid=consumer,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+uniquemember: uid=manager,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+uniquemember: uid=consumergui,ou=ConsumerUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ServiceConsumer,ou=EngineeringGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ServiceConsumer
+uniquemember: uid=engg_user1,ou=EngineeringUsers,ou=CSAUsers,dc=example,dc=c
+ om
+uniquemember: uid=engg_user2,ou=EngineeringUsers,ou=CSAUsers,dc=example,dc=c
+ om
+uniquemember: uid=csladmin,ou=EngineeringUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ServiceConsumer,ou=MarketingGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ServiceConsumer
+uniquemember: uid=mkt_user1,ou=MarketingUsers,ou=CSAUsers,dc=example,dc=com
+uniquemember: uid=mkt_user2,ou=MarketingUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ServiceConsumer,ou=SalesGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ServiceConsumer
+uniquemember: uid=sales_user1,ou=SalesUsers,ou=CSAUsers,dc=example,dc=com
+uniquemember: uid=sales_user2,ou=SalesUsers,ou=CSAUsers,dc=example,dc=com
+
+dn: cn=ServiceDesigner,ou=ProviderGroup,ou=CSAGroups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: ServiceDesigner
+uniquemember: uid=svcdesigner,ou=ProviderUsers,ou=CSAUsers,dc=example,dc=com
+
